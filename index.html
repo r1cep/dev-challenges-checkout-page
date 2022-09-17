@@ -6,67 +6,145 @@
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" href="devchallenges.png" />
     <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&amp;display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <title>Checkout page</title>
-
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-      }
-
-      ul {
-        padding-left: 24px;
-      }
-
-      li {
-        margin-bottom: 8px;
-      }
-
-      .welcome {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .welcome-text {
-        margin-top: 30vh;
-        font-weight: 500;
-      }
-
-      .welcome-text p {
-        font-size: 1rem;
-        font-weight: 400;
-      }
-
-      .welcome-text h1 {
-        font-size: 1.5rem;
-      }
-
-      .welcome-text a {
-        color: #f7542e;
-      }
-    </style>
   </head>
   <body>
-    <div class="welcome">
-      <div class="welcome-text">
-        <h1>
-          Welcome to
-          <a href="https://devchallenges.io/" target="_blank" rel="noreferrer">devchallenges.io</a>
-        </h1>
-
-        <p>If you have any questions, don't hesitate to ask on Discord. Here are 7 general steps to complete the challenge:</p>
-      </div>
-
-      <ul>
-        <li><b>Step 1:</b> Create a new repository on github</li>
-        <li><b>Step 2:</b> Copy resources, README.md to your repository</li>
-        <li><b>Step 3:</b> Login to Figma to checkout font, color, spacing,..</li>
-        <li><b>Step 4:</b> Complete all user stories</li>
-        <li><b>Step 5:</b> Update README.md</li>
-        <li><b>Step 6:</b> Deploy your app and submit your solution</li>
-        <li><b>Step 7:</b> Share your solution on Discord, Twitter and other platforms to ask for feedback</li>
-      </ul>
+    <header class="header container" aria-labelledby="page-title">
+      <h1 class="page-title" id="page-title">Checkout</h1>
+    </header>
+    <div class="main-wrapper container">
+      <main class="main">
+        <form class="checkout-form" aria-label="Checkout form">
+          <fieldset>
+            <legend class="input-legend">Contact Information</legend>
+            <div class="input-group-wrapper">
+              <div class="input-group">
+                <label class="input-label" for="email">E-mail</label>
+                <div class="input-wrapper">
+                  <span class="material-icons icon icon-left">email</span>
+                  <input class="input" type="email" name="email" id="email" placeholder="Enter your email..." required />
+                </div>
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="phone">Phone</label>
+                <div class="input-wrapper">
+                  <span class="material-icons icon icon-left">call</span>
+                  <input class="input" type="tel" name="tel" id="phone" placeholder="Enter your phone..." required pattern="[0-9]{2,4}-[0-9]{2,4}-[0-9]{2,4}" />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend class="input-legend">Shipping address</legend>
+            <div class="input-group-wrapper">
+              <div class="input-group">
+                <label class="input-label" for="fullname">Full name</label>
+                <div class="input-wrapper">
+                  <span class="material-icons icon icon-left">account_circle</span>
+                  <input class="input" type="text" name="fullname" id="fullname" placeholder="Rodney Cotton" required />
+                </div>
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="address">Address</label>
+                <div class="input-wrapper">
+                  <span class="material-icons icon icon-left">home</span>
+                  <input class="input" type="text" name="address" id="address" placeholder="Your address.." required />
+                </div>
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="city">City</label>
+                <div class="input-wrapper">
+                  <span class="material-icons icon icon-left">location_city</span>
+                  <input class="input" type="text" name="city" id="city" placeholder="Your city.." required />
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="input-group">
+                  <label class="input-label" for="country">Country</label>
+                  <div class="input-wrapper">
+                    <span class="material-icons icon icon-left">public</span>
+                    <select class="input select" name="country" id="country" required>
+                      <option value="">Your country..</option>
+                      <option value="United States">United States</option>
+                      <option value="Japan">Japan</option>
+                      <option value="China">China</option>
+                    </select>
+                    <span class="material-icons icon icon-right">keyboard_arrow_down</span>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label class="input-label" for="postal-code">Postal code</label>
+                  <div class="input-wrapper">
+                    <span class="material-icons icon icon-left">markunread_mailbox</span>
+                    <input class="input" type="text" name="postal-code" id="postal-code" placeholder="Your postal code.." required />
+                  </div>
+                </div>
+              </div>
+              <div class="input-checkbox-wrapper">
+                <input type="checkbox" name="checkbox" id="checkbox" value="true" />
+                <label class="input-label" for="checkbox">Save this information for next time</label>
+              </div>
+              <div class="submit-btn-wrapper">
+                <button class="submit-btn" type="submit">Continue</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </main>
+      <aside class="sidebar">
+        <div class="cart">
+          <ul class="cart-list">
+            <li class="cart-item">
+              <img class="cart-item__img" src="./photo1.png" alt="" width="134" height="136" decoding="async" />
+              <div class="cart-item__detail">
+                <p class="cart-item__name">Vintage Backbag</p>
+                <p class="cart-item__price-wrapper">
+                  <span class="cart-item__discounted-price">$54.99</span>
+                  <span class="cart-item__price">$94.99</span>
+                </p>
+                <div class="cart-item__ammount-wrapper">
+                  <button class="cart-item__btn"><span class="material-icons icon">remove</span></button>
+                  <span class="cart-item__ammount">1</span>
+                  <button class="cart-item__btn"><span class="material-icons icon">add</span></button>
+                </div>
+              </div>
+            </li>
+            <li class="cart-item">
+              <img class="cart-item__img" src="./photo2.png" alt="" width="134" height="136" decoding="async" />
+              <div class="cart-item__detail">
+                <p class="cart-item__name">Levi Shoes</p>
+                <p class="cart-item__price-wrapper">
+                  <span class="cart-item__discounted-price">$74.99</span>
+                  <span class="cart-item__price">$124.99</span>
+                </p>
+                <div class="cart-item__ammount-wrapper">
+                  <button class="cart-item__btn"><span class="material-icons icon">remove</span></button>
+                  <span class="cart-item__ammount">1</span>
+                  <button class="cart-item__btn"><span class="material-icons icon">add</span></button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="price-list">
+            <li class="price-item">
+              <span class="price-item__title">Shipping</span>
+              <span class="price-item__value">$19</span>
+            </li>
+            <li class="price-item">
+              <span class="price-item__title">Total</span>
+              <span class="price-item__value">$148.98</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
     </div>
+    <footer class="footer container">
+      <small class="footer-signature">created by r1cep - devChallenges.io</small>
+    </footer>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
